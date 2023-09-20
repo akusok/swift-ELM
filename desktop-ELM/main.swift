@@ -129,7 +129,7 @@ do {
     // set constants
     let inputs: Int = 7*7*3
     let targets: Int = 2
-    let numSamples: Int = 100
+    let numSamples: Int = 2  // 100
     let useRealFiles = true
     let saveResults = true
     let bsize = 56
@@ -161,8 +161,8 @@ do {
 
     
     // load data
-    let filesW = Array(0 ..< bK).map { i in URL(fileURLWithPath: "/Users/akusok/wrkdir/_2019/research Metal ELM/faceSkinData/w_\(i).npy") }
-    let filesBias = Array(0 ..< bK).map { i in URL(fileURLWithPath: "/Users/akusok/wrkdir/_2019/research Metal ELM/faceSkinData/bias_\(i).npy") }
+    let filesW = Array(0 ..< bK).map { i in URL(fileURLWithPath: "/Users/akusok/GitHub/swift-ELM/data/w_\(i).npy") }
+    let filesBias = Array(0 ..< bK).map { i in URL(fileURLWithPath: "/Users/akusok/GitHub/swift-ELM/data/bias_\(i).npy") }
 
     var X: MPSMatrix
     var Y: MPSMatrix
@@ -212,8 +212,8 @@ do {
         
         // load data
         if useRealFiles {
-            let fileX = URL(fileURLWithPath: "/Users/akusok/wrkdir/_2019/research Metal ELM/faceSkinData/X_\(b).npy")
-            let fileY = URL(fileURLWithPath: "/Users/akusok/wrkdir/_2019/research Metal ELM/faceSkinData/Y_\(b).npy")
+            let fileX = URL(fileURLWithPath: "/Users/akusok/GitHub/swift-ELM/data/X_\(b).npy")
+            let fileY = URL(fileURLWithPath: "/Users/akusok/GitHub/swift-ELM/data/Y_\(b).npy")
             X = loadNpyToMatrix(contentsOf: fileX)
             Y = loadNpyToMatrix(contentsOf: fileY)
         } else {
